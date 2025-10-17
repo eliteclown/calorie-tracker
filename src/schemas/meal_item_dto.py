@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class MealItembase(BaseModel):
+class MealItemBase(BaseModel):
     food_id:int
     quantity:float
 

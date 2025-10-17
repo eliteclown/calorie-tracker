@@ -10,10 +10,14 @@ class User(Base):
     id = Column(Integer,primary_key=True,index=True)
     username = Column(String(50),unique=False,nullable=False)
     email = Column(String(60),unique=True,nullable=False)
-    password = Column(string(255),nullable=False)
+    password = Column(String(255),nullable=False)
     age = Column(Integer)
     height = Column(Float)
     weight = Column(Float)
     gender = Column(String(10))
     activity_level = Column(String(20))
     goal = Column(String(20))
+    
+    # Relationships
+    meals = relationship("Meal", back_populates="user", cascade="all, delete-orphan")
+    activities = relationship("Activity", back_populates="user", cascade="all, delete-orphan")

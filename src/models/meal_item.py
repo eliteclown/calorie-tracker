@@ -1,4 +1,4 @@
-from sqlalchemy import Integer,String,Float,ForeignKey
+from sqlalchemy import Integer,String,Float,ForeignKey ,Column
 from sqlalchemy.orm import relationship
 from src.db.session import Base
 
@@ -9,6 +9,7 @@ class MealItem(Base):
     meal_id=Column(Integer,ForeignKey("meals.id"),nullable=False)
     food_id=Column(Integer,ForeignKey("foods.id"),nullable=False)
     quantity=Column(Float,nullable=False)
+    calories=Column(Float)
     protein=Column(Float)
     carbs=Column(Float)
     fat=Column(Float)

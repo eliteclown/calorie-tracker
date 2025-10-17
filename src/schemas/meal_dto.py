@@ -4,7 +4,7 @@ from datetime import date
 from src.schemas.meal_item_dto import MealItemCreate,MealItem
 
 class MealBase(BaseModel):
-    log_data:data
+    log_date:date
     meal_type:str
 
 class MealCreate(MealBase):
